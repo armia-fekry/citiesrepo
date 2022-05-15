@@ -1,0 +1,20 @@
+<div class="container" >
+  <div class="row ">
+    <mat-slider
+    thumbLabel
+    #slider
+    [displayWith]="formatLabel"
+    [tickInterval]="ticketInterval"
+    step="1000000"
+    min="0"
+    max="50000000"
+    aria-label="units" (change)="Slide(slider)"></mat-slider>
+    </div>
+  <div class="row itemsBlock" *ngFor="let item of citiesList |async" >
+    <div class="col-md-4 col-sm-6 col-12">
+      <app-citycard [city]="item">
+      </app-citycard>
+    </div>
+
+  </div>
+</div>

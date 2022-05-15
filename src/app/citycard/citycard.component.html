@@ -1,0 +1,18 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"><img src="{{city.NationFlag}}" /></div>
+    <mat-card-title>{{city.CityName}}</mat-card-title>
+    <mat-card-subtitle>{{city.Nation}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{city.CityImage}}" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      {{city.Description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [disabled]="city.Population<5000000" (click)="Nuke()">Nuke</button>
+    <button mat-raised-button color="primary"  (click)="Grow()">Grow</button>
+    <p *ngIf="showPopulation">{{city.Population}}</p>
+  </mat-card-actions>
+</mat-card>
